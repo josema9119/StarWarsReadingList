@@ -10,14 +10,14 @@
     flex: 0 0 auto;
     width: 250px;
     background-color: rgba(5, 5, 5, 0.889);
-    opacity: 90%;
+    opacity: 100%;
     color: #fff;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 2rem;
   }
   .card:hover {
-    opacity: 100;
+    
   }
   body {
     overflow: hidden;
