@@ -1,13 +1,17 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-light bg-light mb-2 justify-content-around">
-      <h1>STAR WARS LOGO</h1>
+      <Link to = "/">
+      <img src="https://www.paredro.com/wp-content/uploads/2019/01/El-logo-de-Star-Wars-tiene-ma%CC%81s-de-9-variaciones-en-su-disen%CC%83o.jpg" style={{ height: "4rem",borderRadius: "50%", opacity: "0.8" }} alt="Star Wars Logo"/>
+      </Link>
       <div className="ml-auto">
           <div className="dropdown">
             <button
-              className="btn btn-primary dropdown-toggle"
+              className="btn btn-warning bg-warning dropdown-toggle"
+              style={{opacity: 0.8, border: 0}}
               type="button"
               id="dropDownMenu"
               data-bs-toggle="dropdown"
