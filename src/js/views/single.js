@@ -8,26 +8,31 @@ export const Single = props => {
 	const params = useParams();
 
 	useEffect (()=>{
-		actions.getOnePeople()
+		actions.getInfoPeople()
 
 	}, [])
 
 	return (
-		<div className="container d-flex justify-content-center">
-		<div className="card" style={{width: "35rem", height: "45rem", opacity: "1"}}>
-			<h1 className="display-4">{store.info.name}</h1>
-			<img src="https://smoda.elpais.com/wp-content/uploads/2019/12/2-look.jpg" className="card-img-top" alt="..." style={{height: "20rem", width: "10rem"}}/>
-			<div className="card-body">
-				<p>{store.info.height}</p>
-				<p>{store.info.hair_color}</p>
-				<p>{store.info.hair_color}</p>
-				<p>{store.info.skin_color}</p>
-				<p>{store.info.skin_color}</p>
-				<p>{store.info.eye_color}</p>
-				<p>{store.info.mass}</p>
-				<p>{store.info.birth_year}</p>
-				<p>{store.info.gender}</p>
-				<p>{store.info.eye_color}</p>
+		<div className="container fluid d-flex justify-content-center">
+		<div className="card mb-3 " style={{width: "540px"}}>
+			<div className="row g-0	">	
+				<div className="col-md-4">
+			<img src="https://smoda.elpais.com/wp-content/uploads/2019/12/2-look.jpg" className="img-fluid rounded-start" alt="..."/>
+			</div>
+			<div className="col-md-8">
+				<div className="card-body">
+				<h4 className="card-tittle">{store.info.name}</h4>
+				<p className="card-text">{store.info.height}</p>
+				<p className="card-text">{store.info.hair_color}</p>
+				<p className="card-text">{store.info.hair_color}</p>
+				<p className="card-text">{store.info.skin_color}</p>
+				<p className="card-text">{store.info.skin_color}</p>
+				<p className="card-text">{store.info.eye_color}</p>
+				<p className="card-text">{store.info.mass}</p>
+				<p className="card-text">{store.info.birth_year}</p>
+				<p className="card-text">{store.info.gender}</p>
+				<p className="card-text">{store.info.eye_color}</p>
+				</div>
 			</div>
 			</div>
 		
@@ -36,6 +41,7 @@ export const Single = props => {
 					Back home
 				</p>
 			</Link>
+			</div>
 			</div>
 	);
 };

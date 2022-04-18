@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json()
 				setStore({people: data.results})
 			},
-			getOnePeople: async ()=>{
+			getInfoPeople: async (e)=>{
 				const response = await fetch ("https://www.swapi.tech/api/people/1");
 				const data = await response.json()
 				setStore({info: data.result.properties})
