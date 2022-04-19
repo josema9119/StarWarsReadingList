@@ -7,7 +7,7 @@ export const People = props => {
 	const { store, actions } = useContext(Context);
 	const {theid} = useParams();
 
-	useEffect (()=>{
+	useEffect (() => {
 		actions.getOnePeople(theid)
 
 	}, [])
@@ -31,19 +31,15 @@ export const People = props => {
               alt="default.404.picture"
             />
 			</div>
-			<div className="col-md-8">
-				<div className="card-body">
+			<div className="col-md-8 text-center">
+				<div className="card-body justify-content-center">
 				<h4 className="card-tittle">{store.onePeople.name}</h4>
-				<p className="card-text">{store.onePeople.height}</p>
-				<p className="card-text">{store.onePeople.hair_color}</p>
-				<p className="card-text">{store.onePeople.hair_color}</p>
-				<p className="card-text">{store.onePeople.skin_color}</p>
-				<p className="card-text">{store.onePeople.skin_color}</p>
-				<p className="card-text">{store.onePeople.eye_color}</p>
-				<p className="card-text">{store.onePeople.mass}</p>
-				<p className="card-text">{store.onePeople.birth_year}</p>
-				<p className="card-text">{store.onePeople.gender}</p>
-				<p className="card-text">{store.onePeople.eye_color}</p>
+				<p className="card-text">Height: {store.onePeople.height}</p>
+				<p className="card-text"> Hair Color: {store.onePeople.hair_color}</p>
+				<p className="card-text">Skin Color: {store.onePeople.skin_color}</p>
+				<p className="card-text">Eye Color: {store.onePeople.eye_color}</p>
+				<p className="card-text"> Birht Year: {store.onePeople.birth_year}</p>
+				<p className="card-text">Gender: {store.onePeople.gender}</p>
 				</div>
 			</div>
 			</div>

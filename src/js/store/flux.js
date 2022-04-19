@@ -2,10 +2,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			people: [],
-			infoPeople: {},
 			onePeople: [],
 			planets: [],
-			onePlanet: {},
+			onePlanet: [],
 
 			},
 		
@@ -15,11 +14,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const dataPeople = await response.json()
 				setStore({ people: dataPeople.results });
 			}, 
-			getInfoPeople: async (e)=>{
-				const response = await fetch ("https://www.swapi.tech/api/people" + e);
-				const dataInfoPeople = await response.json()
-				return dataInfoPeople.results;
-			},
 			getOnePeople: async (e) => {
 				const response = await fetch("https://www.swapi.tech/api/people/" + e);
 				const dataOnePeople = await response.json();
@@ -33,11 +27,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch ("https://www.swapi.tech/api/planets");
 				const dataPlanets = await response.json()
 				setStore({planets: dataPlanets.results})
-			},
-			getInfoPlanets: async (e) =>{
-				const response = await fetch ("https://www.swapi.tech/api/planets/" + e)
-				const dataInfoPlanets = await response.json()
-				return dataInfoPlanets.results;
 			},
 			getOnePlanet: async (e) => {
 				const response = await fetch("https://www.swapi.tech/api/planets/" + e);

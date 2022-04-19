@@ -2,14 +2,17 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import reactRouterDom from "react-router-dom";
 
 export const Planets = props => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
+	const {theid2} = useParams();
 
-	useEffect(() => {
-		actions.getOnePlanet(params.id);
-	  }, []);
+	useEffect (() => {
+		actions.getOnePlanet(theid2);
+		actions.getPlanets();
+
+	  }, [])
 	
 	return (
 		<div className="container fluid d-flex justify-content-center">
@@ -19,7 +22,7 @@ export const Planets = props => {
 				<img
               src={
                 "https://starwars-visualguide.com/assets/img/planets/" +
-                store.onePlanet.uid +
+                theid2 +
                 ".jpg"
               }
               onError={({ currentTarget }) => {
@@ -33,6 +36,12 @@ export const Planets = props => {
 			</div>
 			<div className="col-md-8">
 				<div className="card-body">
+				<h4 className="card-tittle">{planets.name}</h4>
+				<p className="card-text">Population: {store.onePlanet.population}</p>
+				<p className="card-text"> Diameter: {store.onePlanet.diameter}</p>
+				<p className="card-text">Terrain: {store.onePlanet.terrain}</p>
+				<p className="card-text">Rotation Period: {store.onePlanet.rotation_period}</p>
+				<p className="card-text"> Orbital Period: {store.onePlanet.orbital_period}</p>
 				</div>
 			</div>
 			</div>

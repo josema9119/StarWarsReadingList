@@ -4,7 +4,6 @@ import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import reactRouterDom from "react-router-dom";
 
-const scrollContainer = document.querySelector("scrolling-wrapper-flexbox");
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -14,12 +13,8 @@ export const Home = () => {
     actions.getPeople();
 	  actions.getPlanets();
   }, []);
-  const scrollContainer = document.querySelector('scrolling-wrapper-flexbox');
 
-  scrollContainer.addEventListener('wheel', (evt) => {
-    evt.preventDefault();
-    scrollContainer.scrollLeft += evt.deltaY
-  });
+  
   return (
     <div className="text-center mt-5">
       <div className="text-center mt-5">
@@ -47,11 +42,8 @@ export const Home = () => {
                       <div className="col-md-8">
                         <div className="card-body">
                           <h5 className="card-title">{people.name}</h5>
-                          <p className="card-text">heigh</p>
-                          <p className="card-text">heigh</p>
-                          <p className="card-text">heigh</p>
-                          <p className="card-text">heigh</p>
-
+                          <p className="card-text"> Hair Color: {store.onePeople.hair_color}</p>
+			                  	<p className="card-text">Skin Color: {store.onePeople.skin_color}</p>
                           <div className="btn-group-vertical justify-content-center">
                             <Link to={"/people/" + people.uid}>
                               <button
@@ -107,7 +99,7 @@ export const Home = () => {
                       <img
               src={
                 "https://starwars-visualguide.com/assets/img/planets/" +
-                store.onePlanet.uid +
+                planets.uid +
                 ".jpg"
               }
               
@@ -118,11 +110,9 @@ export const Home = () => {
                       <div className="col-md-8">
                         <div className="card-body">
                           <h5 className="card-title">{planets.name}</h5>
-                          <p className="card-text">heigh</p>
-                          <p className="card-text">heigh</p>
-                          <p className="card-text">heigh</p>
-                          <p className="card-text">heigh</p>
-
+                          <p className="card-text">Population: {store.onePlanet.population}</p>
+                          <p className="card-text"> Diameter: {store.onePlanet.diameter}</p>
+                          <p className="card-text">Terrain: {store.onePlanet.terrain}</p>            
                           <div className="btn-group-vertical justify-content-center">
                             <Link to={"/planets/" + planets.uid}>
                               <button
