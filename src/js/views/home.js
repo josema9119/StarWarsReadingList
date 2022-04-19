@@ -112,7 +112,8 @@ export const Home = () => {
                           <h5 className="card-title">{planets.name}</h5>
                           <p className="card-text">Population: {store.onePlanet.population}</p>
                           <p className="card-text"> Diameter: {store.onePlanet.diameter}</p>
-                          <p className="card-text">Terrain: {store.onePlanet.terrain}</p>            
+                          <p className="card-text">Terrain: {store.onePlanet.terrain}</p>
+
                           <div className="btn-group-vertical justify-content-center">
                             <Link to={"/planets/" + planets.uid}>
                               <button

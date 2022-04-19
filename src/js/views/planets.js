@@ -10,7 +10,7 @@ export const Planets = props => {
 
 	useEffect (() => {
 		actions.getOnePlanet(theid);
-		actions.getPlanets();
+		actions.getPlanets(theid);
 
 	  }, [])
 	

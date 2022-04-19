@@ -20,7 +20,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 				  onePeople: { ...dataOnePeople.result.properties, uid: e },
 				});
-				console.log(onePeople)
 			},
 			
 			getPlanets: async ()=>{
