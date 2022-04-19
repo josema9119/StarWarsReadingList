@@ -1,9 +1,9 @@
 .scrolling-wrapper-flexbox {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    overflow-x: scroll;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .card {
     
@@ -18,7 +18,7 @@
   }
  
   body {
-    overflow: hidden;
+    overflow: scroll;
     background-image: url("http://www.solofondos.com/wp-content/uploads/2016/07/star-wars-scaled.jpg");
     color: white;
     background-size: cover;
