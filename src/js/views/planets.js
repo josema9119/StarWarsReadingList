@@ -6,10 +6,10 @@ import reactRouterDom from "react-router-dom";
 
 export const Planets = props => {
 	const { store, actions } = useContext(Context);
-	const {theid2} = useParams();
+	const {theid} = useParams();
 
 	useEffect (() => {
-		actions.getOnePlanet(theid2);
+		actions.getOnePlanet(theid);
 		actions.getPlanets();
 
 	  }, [])
@@ -22,7 +22,7 @@ export const Planets = props => {
 				<img
               src={
                 "https://starwars-visualguide.com/assets/img/planets/" +
-                theid2 +
+                theid +
                 ".jpg"
               }
               onError={({ currentTarget }) => {
@@ -36,7 +36,7 @@ export const Planets = props => {
 			</div>
 			<div className="col-md-8">
 				<div className="card-body">
-				<h4 className="card-tittle">{planets.name}</h4>
+				<h4 className="card-tittle">{store.onePlanet.name}</h4>
 				<p className="card-text">Population: {store.onePlanet.population}</p>
 				<p className="card-text"> Diameter: {store.onePlanet.diameter}</p>
 				<p className="card-text">Terrain: {store.onePlanet.terrain}</p>
