@@ -5,8 +5,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			onePeople: [],
 			planets: [],
 			onePlanet: [],
+			updateFavorites: [],
 
-			},
+		},			
 		
 		actions: {
 			getPeople: async ()=>{
@@ -32,6 +33,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const dataOnePlanet = await response.json();				
 				setStore({ onePlanet: { ...dataOnePlanet.result.properties, uid: e } });
 		},
+		updateFavorites: (a) =>{
+			const store = getStore ()
+			if (!store.updateFavorites.includes(a)){
+				setStore ({updateFavorites: [...store.updateFavorites, a]})
+			
+			}
+			else{
+				setStore ({updateFavorites: store.updateFavorites.filter((b)=> b != a)})
+			}
+
+		}
 
 	},
 };

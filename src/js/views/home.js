@@ -66,6 +66,7 @@ export const Home = () => {
                                 borderRadius: "3%",
                                 marginTop: "10px",
                               }}
+                              onClick = {()=> actions.updateFavorites(people.name)}
                             >
                               Add to Favourites
                               <i
@@ -136,6 +137,7 @@ export const Home = () => {
                                 borderRadius: "3%",
                                 marginTop: "10px",
                               }}
+                              onClick = {()=> actions.updateFavorites(planets.name)}
                             >
                               Add to Favourites
                               <i
