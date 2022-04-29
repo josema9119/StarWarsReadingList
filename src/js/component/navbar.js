@@ -24,11 +24,11 @@ export const Navbar = () => {
             >
               Favorites
             </button>
-            <ul className="dropdown-menu" aria-labelledby="dropDownMenu">
+            <ul className="dropdown-menu" aria-labelledby="dropDownMenu" style={{width: "20%"}}>
               {store.updateFavorites.map((favorites, index) => {
-                return <li key = {index}>
+                return <li key = {index} style={{}}>
                 {favorites}  
-                <button onClick={()=>actions.updateFavorites(favorites)}>x</button>
+                <button onClick={()=>actions.updateFavorites(favorites)} style={{float: "right", background: "transparent", border: "none"}}>x</button>
               </li>
               })}         
             </ul>
