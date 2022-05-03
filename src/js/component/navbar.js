@@ -22,7 +22,7 @@ export const Navbar = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Favorites
+              Favorites   <p className="d-inline counter">{store.updateFavorites.length} </p>
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropDownMenu" style={{width: "20%"}}>
               {store.updateFavorites.map((favorites, index) => {
